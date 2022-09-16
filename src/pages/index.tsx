@@ -4,7 +4,6 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { useState } from 'react'
 import ButtonWithSnackbar from '../components/ButtonWithSnackbar'
-import styles from '../styles/Home.module.css'
 import copyToClipboard from '../utils/copyToClipboard'
 import { repeatForNCharacters } from '../utils/repeat'
 
