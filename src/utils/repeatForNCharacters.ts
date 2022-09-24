@@ -1,4 +1,4 @@
-export const repeatForNCharacters = (str: string, n: number): string => { 
+const repeatForNCharacters = (str: string, n: number): string => { 
   if (str.length === 0) {
     return ""
   }
@@ -8,3 +8,5 @@ export const repeatForNCharacters = (str: string, n: number): string => {
   }
   return result.slice(0, n)
 }
+
+export default repeatForNCharacters

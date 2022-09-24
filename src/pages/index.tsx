@@ -6,7 +6,7 @@ import { useState } from 'react'
 import ButtonWithSnackbar from '../components/ButtonWithSnackbar'
 import HeadWithOGP from '../components/HeadWithOGP'
 import copyToClipboard from '../utils/copyToClipboard'
-import { repeatForNCharacters } from '../utils/repeat'
+import repeatForNCharacters from '../utils/repeatForNCharacters'
 
 const Home: NextPage = () => {
   const [processedText, setProcessedText] = useState("")
