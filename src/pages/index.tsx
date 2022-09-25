@@ -55,6 +55,7 @@ const Home: NextPage = () => {
               label="上限いっぱいまで文字を詰め込む"
             />
           </FormGroup>
+          <Typography>文字数</Typography>
           <Slider
             aria-label='文字数の上限'
             defaultValue={140}
@@ -66,12 +67,12 @@ const Home: NextPage = () => {
                 cramToTheMax
               ))
             }}
-            step={35}
+            step={70}
             min={0}
             max={500}
             marks={[
-              { value: 140, label: "140" },
-              { value: 280, label: "280" }
+              { value: 140, label: "140文字" },
+              { value: 280, label: "280文字" }
             ]}
             valueLabelDisplay="auto"
           />
