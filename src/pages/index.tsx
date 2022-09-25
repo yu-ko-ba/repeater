@@ -25,6 +25,10 @@ const Home: NextPage = () => {
       <main>
         <Container maxWidth="xs">
           <TextField
+            label="繰り返したい文字列を入力してください"
+            multiline
+            margin='dense'
+            fullWidth
             onChange={(e) => {
               setUnprocessedText(e.target.value)
               setProcessedText(repeat(
