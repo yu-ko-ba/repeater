@@ -7,16 +7,11 @@ import ButtonWithSnackbar from '../components/ButtonWithSnackbar'
 import HeadWithOGP from '../components/HeadWithOGP'
 import copyToClipboard from '../utils/copyToClipboard'
 import repeat from '../utils/repeat'
-import repeatForNCharacters from '../utils/repeatForNCharacters'
 
 const Home: NextPage = () => {
   const [unprocessedtext, setUnprocessedText] = useState("")
   const [processedText, setProcessedText] = useState("")
   const [cramToTheMax, setCramToTheMax] = useState(false)
-
-  const handleChange = () => {
-    setProcessedText(repeat(unprocessedtext, 140, cramToTheMax))
-  }
 
   return (
     <>
