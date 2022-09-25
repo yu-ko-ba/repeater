@@ -1,4 +1,5 @@
-import { Container, FormControlLabel, FormGroup, Slider, Switch, TextField, ThemeProvider, Typography } from '@mui/material'
+import { ExpandMore } from '@mui/icons-material'
+import { Accordion, AccordionDetails, AccordionSummary, Box, Container, FormControlLabel, FormGroup, Slider, Switch, TextField, ThemeProvider, Typography } from '@mui/material'
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
@@ -39,44 +40,53 @@ const Home: NextPage = () => {
               ))
             }}
           />
-          <FormGroup>
-            <FormControlLabel
-              control={
-                <Switch
-                  onChange={(e) => {
-                    setCramToTheMax(e.target.checked)
+          <Box>
+            <Accordion>
+              <AccordionSummary expandIcon={<ExpandMore />}>
+                <Typography variant='subtitle2'>Options</Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <FormGroup>
+                  <FormControlLabel
+                    control={
+                      <Switch
+                        onChange={(e) => {
+                          setCramToTheMax(e.target.checked)
+                          setProcessedText(repeat(
+                            unprocessedtext,
+                            processedTextMaxLength,
+                            e.target.checked
+                          ))
+                        }}
+                      />
+                    }
+                    label="上限いっぱいまで文字を詰め込む"
+                  />
+                </FormGroup>
+                <Typography>文字数</Typography>
+                <Slider
+                  aria-label='文字数の上限'
+                  defaultValue={140}
+                  onChange={(_, v) => {
+                    setProcessedTextMaxLength(v as number)
                     setProcessedText(repeat(
                       unprocessedtext,
-                      processedTextMaxLength,
-                      e.target.checked
+                      v as number,
+                      cramToTheMax
                     ))
                   }}
+                  step={70}
+                  min={0}
+                  max={500}
+                  marks={[
+                    { value: 140, label: "140文字" },
+                    { value: 280, label: "280文字" }
+                  ]}
+                  valueLabelDisplay="auto"
                 />
-              }
-              label="上限いっぱいまで文字を詰め込む"
-            />
-          </FormGroup>
-          <Typography>文字数</Typography>
-          <Slider
-            aria-label='文字数の上限'
-            defaultValue={140}
-            onChange={(_, v) => {
-              setProcessedTextMaxLength(v as number)
-              setProcessedText(repeat(
-                unprocessedtext,
-                v as number,
-                cramToTheMax
-              ))
-            }}
-            step={70}
-            min={0}
-            max={500}
-            marks={[
-              { value: 140, label: "140文字" },
-              { value: 280, label: "280文字" }
-            ]}
-            valueLabelDisplay="auto"
-          />
+              </AccordionDetails>
+            </Accordion>
+          </Box>
           <Typography>{processedText}</Typography>
           <ButtonWithSnackbar
             buttonLabel='クリップボードにコピー'
