@@ -1,10 +1,15 @@
-export const repeatForNCharacters = (str: string, n: number): string => { 
-  if (str.length === 0) {
+const repeat = (repeatText: string, resultMaxLength: number, cramToTheMax: boolean): string => {
+  if (repeatText === "") {
     return ""
   }
-  let result = str
-  while (result.length < n) {
-    result += str
+
+  const times = Math.trunc(resultMaxLength / repeatText.length)
+
+  if (cramToTheMax) {
+    return repeatText.repeat(times + 1).slice(0, resultMaxLength)
   }
-  return result.slice(0, n)
+
+  return repeatText.repeat(times)
 }
+
+export default repeat
