@@ -5,6 +5,7 @@ import Image from 'next/image'
 import React, { useState } from 'react'
 import ButtonWithSnackbar from '../components/ButtonWithSnackbar'
 import HeadWithOGP from '../components/HeadWithOGP'
+import theme from '../theme'
 import copyToClipboard from '../utils/copyToClipboard'
 import repeat from '../utils/repeat'
 
@@ -15,7 +16,7 @@ const Home: NextPage = () => {
   const [cramToTheMax, setCramToTheMax] = useState(false)
 
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <HeadWithOGP
         url='https://yu-ko-ba.github.io/repeater/'
         title='repeater'
@@ -85,7 +86,7 @@ const Home: NextPage = () => {
           />
         </Container>
       </main>
-    </>
+    </ThemeProvider>
   )
 }
 
