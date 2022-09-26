@@ -43,7 +43,7 @@ const Home: NextPage = () => {
           <Box>
             <Accordion>
               <AccordionSummary expandIcon={<ExpandMore />}>
-                <Typography variant='subtitle2'>Options</Typography>
+                <Typography variant='subtitle2'>詳細設定</Typography>
               </AccordionSummary>
               <AccordionDetails>
                 <FormGroup>
