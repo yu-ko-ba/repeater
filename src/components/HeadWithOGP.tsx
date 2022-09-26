@@ -10,6 +10,7 @@ type HeadWithOgpProps = {
 const HeadWithOGP = ({ url, title, description, imageUrl }: HeadWithOgpProps) => {
   return (
     <Head>
+      <meta name="theme-color" content="#bbdefb" />
       <meta property="og:url" content={url} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} / >
