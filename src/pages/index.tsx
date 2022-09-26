@@ -87,7 +87,7 @@ const Home: NextPage = () => {
               </AccordionDetails>
             </Accordion>
           </Box>
-          <Typography>{processedText}</Typography>
+          <Typography sx={{ overflowWrap: "break-word" }}>{processedText}</Typography>
           <ButtonWithSnackbar
             buttonLabel='クリップボードにコピー'
             snackbarMessage='コピーしました'
