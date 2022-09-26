@@ -76,7 +76,7 @@ const Home: NextPage = () => {
                     ))
                   }}
                   step={20}
-                  min={0}
+                  min={20}
                   max={500}
                   marks={[
                     { value: 140, label: "140文字" },
