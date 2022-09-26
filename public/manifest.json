@@ -3,7 +3,7 @@
     "short_name": "repeater",
     "description": "入力された文字を繰り返します",
     "display": "standalone",
-    "theme_color": "#1565c0",
+    "theme_color": "#bbdefb",
     "background_color": "#ffffff",
     "start_url": "index.html",
     "icons": [
