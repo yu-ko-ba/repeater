@@ -75,8 +75,8 @@ const Home: NextPage = () => {
                       cramToTheMax
                     ))
                   }}
-                  step={70}
-                  min={0}
+                  step={20}
+                  min={20}
                   max={500}
                   marks={[
                     { value: 140, label: "140文字" },
